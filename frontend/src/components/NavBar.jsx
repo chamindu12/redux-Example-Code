@@ -2,7 +2,7 @@ import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { logout } from "./Redux/Action";
 
-const NavBar = ({ userName }) => {
+const NavBar = ({ isAuthenticated }) => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
@@ -21,12 +21,12 @@ const NavBar = ({ userName }) => {
       <div className="w-[80px] h-[80px] mt-2"><img src="logo.png" alt="" /></div>
       
       {/* Sign Up button */}
-      {!userName ? (
+      {!isAuthenticated ? (
         <button
           onClick={handleSignUp}
           className="bg-yellow-400 text-white px-4 py-2 rounded-lg hover:bg-yellow-600"
         >
-          <span onClick={handleSignUp}>Sign Up</span>
+          Sign Up
         </button>
       ) : (
         <button

@@ -3,7 +3,7 @@ import NavBar from './navBar';
 import { useSelector } from 'react-redux';
 
 const Home = () => {
-    const { userName, isAuthenticated } = useSelector(state => state);
+    const { user, isAuthenticated } = useSelector(state => state);
     /*const [userName, setUserName] = useState(null);
 
     useEffect(() => {
@@ -16,12 +16,12 @@ const Home = () => {
   return (
     <div className="min-h-screen bg-gray-100">
 
-        <NavBar user={userName} handleLogin={() => {}} />
+        <NavBar userName={user?.userName} isAuthenticated={isAuthenticated} />
         
       <div className="flex justify-center items-center h-[80vh]">
           {isAuthenticated ? (
           <h2 className="text-4xl font-semibold text-center text-gray-800">
-            Welcome to the Homepage, {userName}!
+            Welcome to the Homepage, {user?.userName}!
           </h2>
         ) : (
           <h2 className="text-4xl font-semibold text-center text-gray-800">
