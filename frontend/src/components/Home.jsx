@@ -1,5 +1,5 @@
 
-import NavBar from './navBar';
+import NavBar from './NavBar';
 import { useSelector } from 'react-redux';
 
 const Home = () => {
@@ -16,12 +16,12 @@ const Home = () => {
   return (
     <div className="min-h-screen bg-gray-100">
 
-        <NavBar userName={user?.userName} isAuthenticated={isAuthenticated} />
+        <NavBar userName={user?.username} isAuthenticated={isAuthenticated} />
         
       <div className="flex justify-center items-center h-[80vh]">
           {isAuthenticated ? (
           <h2 className="text-4xl font-semibold text-center text-gray-800">
-            Welcome to the Homepage, {user?.userName}!
+            Welcome to the Homepage, {user?.username}!
           </h2>
         ) : (
           <h2 className="text-4xl font-semibold text-center text-gray-800">
